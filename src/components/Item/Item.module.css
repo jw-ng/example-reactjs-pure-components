@@ -1,0 +1,11 @@
+.item {
+  display: grid;
+  grid-template-columns: 20px 300px auto;
+  grid-gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.description {
+  text-align: left;
+}
