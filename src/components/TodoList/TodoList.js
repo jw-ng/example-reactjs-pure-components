@@ -29,7 +29,7 @@ class TodoList extends React.Component {
 
   render() {
     return (
-      <div className={styles['todo-list']}>
+      <div className={styles.todoList}>
         {Object.keys(this.state.todos).map(itemId => {
           const { [itemId]: item } = this.state.todos;
           return (
