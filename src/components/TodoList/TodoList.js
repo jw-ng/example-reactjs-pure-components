@@ -1,13 +1,15 @@
 import React from 'react';
+import { initialState } from '../../todos';
 import Item from '../Item/Item';
-import { todos } from '../../todos';
+import Footer from '../Footer/Footer';
 
 import styles from './TodoList.module.css';
 
 class TodoList extends React.Component {
-  state = todos;
+  state = initialState;
 
   toggleStatus = itemId => {
+    console.log(`toggling status of item [${itemId}]`);
     const { [itemId]: item } = this.state.todos;
     this.setState({
       todos: {
@@ -21,6 +23,7 @@ class TodoList extends React.Component {
   };
 
   removeItem = itemId => {
+    console.log(`removing item [${itemId}]`);
     const { [itemId]: _, ...theRest } = this.state.todos;
     this.setState({
       todos: theRest
@@ -30,6 +33,7 @@ class TodoList extends React.Component {
   render() {
     return (
       <div className={styles.todoList}>
+        <h3>Todo list:</h3>
         {Object.keys(this.state.todos).map(itemId => {
           const { [itemId]: item } = this.state.todos;
           return (
@@ -43,6 +47,7 @@ class TodoList extends React.Component {
             />
           );
         })}
+        <Footer />
       </div>
     );
   }

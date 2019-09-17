@@ -1,4 +1,4 @@
-export const todos = {
+export const initialState = {
   todos: {
     'todo-001': {
       description: 'buy some milk',

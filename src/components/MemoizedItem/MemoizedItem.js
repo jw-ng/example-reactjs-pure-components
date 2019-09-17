@@ -2,8 +2,8 @@ import React from 'react';
 
 import styles from './MemoizedItem.module.css';
 
-const Item = React.memo(props => {
-  const { id, description, done, toggleStatus, removeItem } = this.props;
+const MemoizedItem = React.memo(props => {
+  const { id, description, done, toggleStatus, removeItem } = props;
   console.log(`rendering <MemoizedItem id="${id}"/>`);
 
   return (
